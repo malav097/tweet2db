@@ -3,18 +3,28 @@ import boto3
 import mysql.connector
 import sys
 
+auth1 = ""
+auth2 = ""
+token1 = ""
+token2 = ""
 
-auth = tweepy.OAuthHandler('',
-                           '')
-auth.set_access_token('',
-                      '')
+db_host = ""
+db_user = ""
+db_pass = ""
+db_name = ""
+
+
+auth = tweepy.OAuthHandler(auth1,
+                           auth2)
+auth.set_access_token(token1,
+                      token)
 api = tweepy.API(auth)
 
 mydb = mysql.connector.connect(
-    host="",
-    user="",
-    passwd="",
-    database=""
+    host= db_host,
+    user= db_user,
+    passwd= db_pass,
+    database= db_name
 )
 
 mycursor = mydb.cursor()
